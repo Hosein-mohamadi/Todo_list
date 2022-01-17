@@ -1,23 +1,112 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext } from "react";
+
+import styles from "./Todo.module.css";
+
+import SimpelContext from "./contextApi/simpelContext";
+import UnDoneTabe from "./components/UnDoneTabe";
+import DoneTabe from "./components/DoneTabe";
+import AllTabe from "./components/AllTabe";
 
 function App() {
+  const context = useContext(SimpelContext);
+  console.log(context.showCheck);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className={styles.parent}>
+      <div>
+        <h1 className={styles.h1}>hello ,Welcome</h1>
+        <div className="">
+          <form onSubmit={(e) => context.handelCreateUser(e)}>
+            <label className={styles.labelUser}>Username</label>
+            <div className={styles.divParent}>
+              <input
+                type="text"
+                onChange={(e) => context?.setUserName(e.target.value)}
+                className={styles.inputUser}
+                value={context.userName}
+                id="website-admin"
+                placeholder="Bonnie Green"
+              />
+              <button type="submit" className={styles.labelSpan}>
+                add
+              </button>
+            </div>
+          </form>
+          {context.showCheck ? (
+            <div className={styles.formDiv}>
+              <div className={styles.buttonDiv}>
+                <button
+                  className={styles.btnUn}
+                  onClick={() => context.handelAllUnDone()}
+                >
+                  UnDone's
+                </button>
+                <button
+                  className={styles.btnEdit}
+                  onClick={() => context.handelAllDone()}
+                >
+                  Done's
+                </button>
+                <button
+                  className={styles.btnDelete}
+                  onClick={() => context.handelAllDelete()}
+                >
+                  Delete
+                </button>
+              </div>
+            </div>
+          ) : null}
+        </div>
+        <div className={styles.tabDiv}>
+          <div
+            className={styles.Tabe}
+            onClick={() => context.setToggelState(1)}
+          >
+            All
+          </div>
+          <div
+            className={styles.Tabe}
+            onClick={() => context.setToggelState(2)}
+          >
+            Done's
+          </div>
+          <div
+            className={styles.Tabe}
+            onClick={() => context.setToggelState(3)}
+          >
+            UnDone's
+          </div>
+        </div>
+        <div className={styles.divInputCheckbox}>
+          <div className={styles.inputCheckBox}>
+            <label className={styles.checkLabel}>All</label>
+            <input
+              onChange={(e) => context.handelCheck(e)}
+              defaultChecked={context.user.checkBox}
+              type="checkbox"
+              className={styles.checkBox}
+            />
+          </div>
+        </div>
+      </div>
+
+      <hr />
+      <div className={styles.divTabel}>
+        <div
+          className={context.toggelState === 1 ? styles.Tabe_1 : styles.Tabes}
         >
-          Learn React
-        </a>
-      </header>
+          <AllTabe />
+        </div>
+        <div
+          className={context.toggelState === 2 ? styles.Tabe_2 : styles.Tabes}
+        >
+          <DoneTabe />
+        </div>
+        <div
+          className={context.toggelState === 3 ? styles.Tabe_3 : styles.Tabes}
+        >
+          <UnDoneTabe />
+        </div>
+      </div>
     </div>
   );
 }

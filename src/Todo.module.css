@@ -1,0 +1,118 @@
+.parent {
+  @apply px-20;
+}
+
+.h1 {
+  @apply text-yellow-600 font-bold text-2xl;
+}
+
+.labelUser {
+  @apply block my-5 text-sm font-medium text-gray-900 dark:text-gray-300;
+}
+
+.labelSpan {
+  @apply inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 rounded-r-md border border-l-0 border-gray-300 dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600;
+}
+
+.divParent {
+  @apply flex;
+}
+
+.inputUser {
+  @apply rounded-none rounded-l-lg bg-gray-50 border text-gray-900 focus:ring-blue-500 
+    focus:border-blue-500 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5 
+     dark:bg-gray-700 dark:border-gray-600 outline-none dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500;
+}
+
+.divInputCheckbox {
+  @apply flex items-start my-6;
+}
+
+.inputCheckBox {
+  @apply flex items-center h-5;
+}
+
+.checkBox {
+  @apply w-5 h-5 bg-gray-50 rounded border border-gray-300;
+}
+
+.divLabel {
+  @apply mx-3 text-sm;
+}
+
+.checkLabel {
+  @apply font-medium text-gray-900 mx-2 dark:text-gray-300;
+}
+
+.tabDiv {
+  @apply flex justify-around mt-5;
+}
+
+.Tabe {
+  @apply active:bg-lime-200 text-center py-2 px-10 font-bold text-white cursor-pointer rounded-md hover:bg-sky-500 transition-all ease-in duration-100 bg-orange-600;
+}
+
+.Tabe_1 {
+  @apply w-full;
+}
+.Tabe_2 {
+  @apply w-full;
+}
+.Tabe_3 {
+  @apply w-full;
+}
+.divTabel {
+  @apply flex justify-center;
+}
+.Tabes {
+  @apply hidden;
+}
+
+.tabel {
+  @apply border-b w-full border-gray-200 shadow;
+}
+
+.thead {
+  @apply bg-gray-50;
+}
+
+.title {
+  @apply py-2 text-xs text-gray-500;
+}
+
+.tbody {
+  @apply bg-white;
+}
+
+.tr {
+  @apply whitespace-nowrap;
+}
+
+.td_Id {
+  @apply px-6 py-4 text-sm text-gray-500;
+}
+
+.td_Name {
+  @apply px-6 py-4;
+}
+
+.td_Name div {
+  @apply text-sm text-gray-900;
+}
+.btnEdit {
+  @apply px-3 mx-1 py-1 text-sm text-white bg-lime-500 rounded;
+}
+.btnUn {
+  @apply px-3 mx-1 py-1 text-sm text-white bg-blue-400 rounded;
+}
+.btnDelete {
+  @apply px-3 mx-1 py-1 text-sm text-white bg-red-400 rounded;
+}
+
+.buttonDiv {
+  @apply flex justify-start my-7;
+}
+
+.formDiv {
+  @apply flex justify-between;
+}
