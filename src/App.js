@@ -9,7 +9,6 @@ import AllTabe from "./components/AllTabe";
 
 function App() {
   const context = useContext(SimpelContext);
-  console.log(context.showCheck);
   return (
     <div className={styles.parent}>
       <div>

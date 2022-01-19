@@ -24,6 +24,7 @@ export default function GolobalState(props) {
       setUserName("");
     }
   };
+
   // done user
   const handelDone = (item) => {
     setUser(user.map((i) => (i.id === item ? { ...i, complete: true } : i)));
@@ -52,20 +53,20 @@ export default function GolobalState(props) {
   // add all check user
   const handelCheck = (e) => {
     let checked = e.target.checked;
+
     setUser(
       user.map((i) => {
         i.checkBox = checked;
         return i;
       })
     );
-    setShowCheck(checked);
+
+    setShowCheck(e.target.checked);
   };
-  console.log(showCheck);
   //add check user
   const handelChekBox = (e, item) => {
-    setUser(
-      user.map((i) => (i.id === item ? { ...i, checkBox: !i.checkBox } : i))
-    );
+    let checked = e.target.checked;
+    setUser(user.map((i) => (i.id === item ? { ...i, checkBox: checked } : i)));
   };
   return (
     <SimpelContext.Provider

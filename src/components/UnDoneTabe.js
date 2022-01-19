@@ -20,12 +20,13 @@ export default function UnDoneTabe() {
         </thead>
         <tbody className={styles.tbody}>
           {context.user.map((item) =>
-            item.complete === false ? (
+            !item.complete ? (
               <tr className={styles.tr} key={item.id}>
                 <td className={styles.td_Id}>
                   <input
                     onChange={(e) => context.handelChekBox(e, item.id)}
                     defaultChecked={item.checkBox}
+                    checked={item.checkBox}
                     type="checkbox"
                     className={styles.checkBox}
                     required

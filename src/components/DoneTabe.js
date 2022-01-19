@@ -27,9 +27,9 @@ export default function DoneTabe() {
                     <input
                       onChange={(e) => context.handelChekBox(e, item.id)}
                       defaultChecked={item.checkBox}
+                      checked={item.checkBox}
                       type="checkbox"
                       className={styles.checkBox}
-                      required
                     />
                   </td>
                   <td className={styles.td_Name}>
