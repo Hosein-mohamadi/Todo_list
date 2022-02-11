@@ -14,7 +14,6 @@ export default function AllTabe() {
             <th className={styles.title}>Name</th>
             <th className={styles.title}>Compelete</th>
             <th className={styles.title}>Done's</th>
-            {/* <th className={styles.title}>UnDone's</th> */}
             <th className={styles.title}>Delete</th>
           </tr>
         </thead>

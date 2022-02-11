@@ -10,13 +10,13 @@ import AllTabe from "./components/AllTabe";
 function App() {
   const context = useContext(SimpelContext);
   return (
-    <div className={styles.parent}>
+    <div className={styles.app_parent}>
       <div>
-        <h1 className={styles.h1}>hello ,Welcome</h1>
-        <div className="">
+        <h1 className={styles.app_titel}>Hi,Welcome!</h1>
+        <div>
           <form onSubmit={(e) => context.handelCreateUser(e)}>
-            <label className={styles.labelUser}>Username</label>
-            <div className={styles.divParent}>
+            <label className={styles.app_user}>Username</label>
+            <div className={styles.app_parent_div}>
               <input
                 type="text"
                 onChange={(e) => context?.setUserName(e.target.value)}
@@ -80,7 +80,9 @@ function App() {
             <label className={styles.checkLabel}>All</label>
             <input
               onChange={(e) => context.handelCheck(e)}
-              defaultChecked={context.user.checkBox}
+              checked={
+                context.user.length !== 0 ? context.user.checkBox : false
+              }
               type="checkbox"
               className={styles.checkBox}
             />
