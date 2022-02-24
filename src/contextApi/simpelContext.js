@@ -3,9 +3,10 @@ import { createContext } from "react";
 const SimpelContext = createContext({
   user: [],
   userName: "",
-  setUserName: () => {},
   toggelState: 1,
   showCheck: false,
+  setUserName: () => {},
+  checkedAll: () => {},
   setToggelState: () => {},
   handelCreateUser: () => {},
   handelDone: () => {},

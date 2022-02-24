@@ -9,6 +9,7 @@ import AllTabe from "./components/AllTabe";
 
 function App() {
   const context = useContext(SimpelContext);
+
   return (
     <div className={styles.app_parent}>
       <div>
@@ -30,7 +31,7 @@ function App() {
               </button>
             </div>
           </form>
-          {context.showCheck ? (
+          {context.checkedAll ? (
             <div className={styles.formDiv}>
               <div className={styles.buttonDiv}>
                 <button
@@ -80,9 +81,7 @@ function App() {
             <label className={styles.checkLabel}>All</label>
             <input
               onChange={(e) => context.handelCheck(e)}
-              checked={
-                context.user.length !== 0 ? context.user.checkBox : false
-              }
+              checked={context.checkedAll}
               type="checkbox"
               className={styles.checkBox}
             />
