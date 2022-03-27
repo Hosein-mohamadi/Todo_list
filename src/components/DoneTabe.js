@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import styles from "../Todo.module.css";
+import "../Todo.css";
 import SimpelContext from "../contextApi/simpelContext";
 
 export default function DoneTabe() {
@@ -7,32 +7,32 @@ export default function DoneTabe() {
 
   return (
     <div>
-      <table className={styles.tabel}>
-        <thead className={styles.thead}>
+      <table className="tabel">
+        <thead className="">
           <tr>
-            <th className={styles.title}>Checked</th>
-            <th className={styles.title}>Name</th>
-            <th className={styles.title}>Compelete</th>
-            <th className={styles.title}>Done's</th>
-            {/* <th className={styles.title}>UnDone's</th> */}
-            <th className={styles.title}>Delete</th>
+            <th className="title">Checked</th>
+            <th className="title">Name</th>
+            <th className="title">Compelete</th>
+            <th className="title">Done's</th>
+            {/* <th className='title'>UnDone's</th> */}
+            <th className="title">Delete</th>
           </tr>
         </thead>
-        <tbody className={styles.tbody}>
+        <tbody className="tbody">
           {context.user.map(
             (item) =>
               item.complete && (
-                <tr className={styles.tr} key={item.id}>
-                  <td className={styles.td_Id}>
+                <tr className="tr" key={item.id}>
+                  <td className="td_Id">
                     <input
                       onChange={(e) => context.handelChekBox(e, item.id)}
                       defaultChecked={item.checkBox}
                       checked={item.checkBox}
                       type="checkbox"
-                      className={styles.checkBox}
+                      className="checkBox"
                     />
                   </td>
-                  <td className={styles.td_Name}>
+                  <td className="td_Name">
                     <div>
                       {item.checkBox ? (
                         <del>{item.userName}</del>
@@ -41,7 +41,7 @@ export default function DoneTabe() {
                       )}
                     </div>
                   </td>
-                  <td className={styles.td_Id}>
+                  <td className="td_Id">
                     {" "}
                     {item.complete ? (
                       <span>Complete</span>
@@ -50,27 +50,27 @@ export default function DoneTabe() {
                     )}
                   </td>
                   {item.complete ? (
-                    <td className={styles.td_Id}>
+                    <td className="td_Id">
                       <button
-                        className={styles.btnUn}
+                        className="btnUn"
                         onClick={() => context.handelUnDone(item.id)}
                       >
                         UnDone's
                       </button>
                     </td>
                   ) : (
-                    <td className={styles.td_Name}>
+                    <td className="td_Name">
                       <button
-                        className={styles.btnEdit}
+                        className="btnEdit"
                         onClick={() => context.handelDone(item.id)}
                       >
                         Done's
                       </button>
                     </td>
                   )}
-                  <td className={styles.td_Id}>
+                  <td className="td_Id">
                     <button
-                      className={styles.btnDelete}
+                      className="btnDelete"
                       onClick={() => context.handelDelete(item.id)}
                     >
                       Delete

@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 
-import styles from "./Todo.module.css";
+import "./Todo.css";
 
 import SimpelContext from "./contextApi/simpelContext";
 import UnDoneTabe from "./components/UnDoneTabe";
@@ -11,43 +11,43 @@ function App() {
   const context = useContext(SimpelContext);
 
   return (
-    <div className={styles.app_parent}>
+    <div className="app_parent">
       <div>
-        <h1 className={styles.app_titel}>Hi,Welcome!</h1>
+        <h1 className="app_titel">Hi,Welcome!</h1>
         <div>
           <form onSubmit={(e) => context.handelCreateUser(e)}>
-            <label className={styles.app_user}>Username</label>
-            <div className={styles.app_parent_div}>
+            <label className="app_user">Username</label>
+            <div className="app_parent_div">
               <input
                 type="text"
                 onChange={(e) => context?.setUserName(e.target.value)}
-                className={styles.inputUser}
+                className="inputUser"
                 value={context.userName}
                 id="website-admin"
                 placeholder="Bonnie Green"
               />
-              <button type="submit" className={styles.labelSpan}>
+              <button type="submit" className="labelSpan">
                 add
               </button>
             </div>
           </form>
           {context.checkedAll ? (
-            <div className={styles.formDiv}>
-              <div className={styles.buttonDiv}>
+            <div className="formDiv">
+              <div className="buttonDiv">
                 <button
-                  className={styles.btnUn}
+                  className="btnUn"
                   onClick={() => context.handelAllUnDone()}
                 >
                   UnDone's
                 </button>
                 <button
-                  className={styles.btnEdit}
+                  className="btnEdit"
                   onClick={() => context.handelAllDone()}
                 >
                   Done's
                 </button>
                 <button
-                  className={styles.btnDelete}
+                  className="btnDelete"
                   onClick={() => context.handelAllDelete()}
                 >
                   Delete
@@ -56,54 +56,39 @@ function App() {
             </div>
           ) : null}
         </div>
-        <div className={styles.tabDiv}>
-          <div
-            className={styles.Tabe}
-            onClick={() => context.setToggelState(1)}
-          >
+        <div className="tabDiv">
+          <div className="Tabe" onClick={() => context.setToggelState(1)}>
             All
           </div>
-          <div
-            className={styles.Tabe}
-            onClick={() => context.setToggelState(2)}
-          >
+          <div className="Tabe" onClick={() => context.setToggelState(2)}>
             Done's
           </div>
-          <div
-            className={styles.Tabe}
-            onClick={() => context.setToggelState(3)}
-          >
+          <div className="Tabe" onClick={() => context.setToggelState(3)}>
             UnDone's
           </div>
         </div>
-        <div className={styles.divInputCheckbox}>
-          <div className={styles.inputCheckBox}>
-            <label className={styles.checkLabel}>All</label>
+        <div className="divInputCheckbox">
+          <div className="inputCheckBox">
+            <label className="checkLabel">All</label>
             <input
               onChange={(e) => context.handelCheck(e)}
               checked={context.checkedAll}
               type="checkbox"
-              className={styles.checkBox}
+              className="checkBox"
             />
           </div>
         </div>
       </div>
 
       <hr />
-      <div className={styles.divTabel}>
-        <div
-          className={context.toggelState === 1 ? styles.Tabe_1 : styles.Tabes}
-        >
+      <div className="divTabel">
+        <div className={context.toggelState === 1 ? "Tabe_1" : "Tabes"}>
           <AllTabe />
         </div>
-        <div
-          className={context.toggelState === 2 ? styles.Tabe_2 : styles.Tabes}
-        >
+        <div className={context.toggelState === 2 ? "Tabe_2" : "Tabes"}>
           <DoneTabe />
         </div>
-        <div
-          className={context.toggelState === 3 ? styles.Tabe_3 : styles.Tabes}
-        >
+        <div className={context.toggelState === 3 ? "Tabe_3" : "Tabes"}>
           <UnDoneTabe />
         </div>
       </div>
